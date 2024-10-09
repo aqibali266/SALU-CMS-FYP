@@ -1,0 +1,261 @@
+/* ###  NAV-BAR STYLE  ### */
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  height: 90px;
+  width: 100%;
+  padding: 0 20px;
+  background-color: #f5f5f5;
+  box-shadow: 0px 0px 10px #949494;
+  z-index: 999;
+}
+
+/* ###  LOGO STYLE  ### */
+.logo {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img {
+  width: 75px;
+  height: 75px;
+}
+
+.logo .name {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-left: 15px;
+  font-size: 1.15rem;
+  font-weight: 800;
+  text-decoration: none;
+  color: #111111;
+}
+
+.logo .name label {
+  cursor: pointer;
+}
+
+/* ###  NAVLINKS AND SIGNUP   ### */
+.navAndSignup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+  transition: all 0.5s ease;
+}
+
+/* ###  NAV MENUS/LINKS STYLE  ### */
+.navLinks {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 65%;
+}
+
+.navLinks a {
+  position: relative;
+  text-decoration: none;
+  color: #111111;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.navLinks a:hover {
+  color: #e5b300;
+}
+
+.navLinks a:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  bottom: -2px;
+  position: absolute;
+  background-color: #e5b300;
+  transition: width 0.5s ease 0s, left 0.5s ease 0s;
+  width: 0;
+}
+
+a:hover:after {
+  width: 100%;
+  left: 0;
+  background-color: #e5b300;
+}
+
+/* ###  THREE LINES (Hamburger Menu)   ### */
+.menuButton {
+  display: none; /* Change to block for mobile responsiveness */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 13%;
+  color: #090909;
+  width: 3.5em;
+  height: 3.5em;
+  border-radius: 0.5em;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.menuButton:hover {
+  border: 1px solid white;
+}
+
+.menuButton:active {
+  color: #666;
+  box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+}
+
+.menuButton input[type="checkbox"] {
+  appearance: none;
+  display: none;
+  visibility: hidden;
+}
+
+.menuButton span {
+  width: 30px;
+  height: 4px;
+  background: #131313;
+  border-radius: 100px;
+  transition: 0.3s ease;
+}
+
+.menuButton input[type="checkbox"]:checked ~ span.top {
+  transform: translateY(290%) rotate(45deg);
+  width: 25px;
+}
+
+.menuButton input[type="checkbox"]:checked ~ span.bot {
+  transform: translateY(-270%) rotate(-45deg);
+  width: 25px;
+}
+
+.menuButton input[type="checkbox"]:checked ~ span.mid {
+  transform: translateX(-20px);
+  opacity: 0;
+}
+@media only screen and (max-width: 980px) {
+  nav .logo img {
+    width: 70px;
+    height: 70px;
+  }
+  nav .logo .name label {
+    font-size: 1rem;
+  }
+  .navLinks a {
+    font-size: 0.8rem;
+  }
+  .loginSignUp a {
+    padding: 3px 10px;
+    font-size: 0.9rem;
+  }
+}
+@media only screen and (max-width: 880px) {
+  .menuButton {
+    display: flex;
+    z-index: 2;
+  }
+  nav {
+    height: 80px;
+    justify-content: space-between;
+    padding: 0 50px;
+  }
+
+  nav .logo .name label {
+    font-size: 1rem;
+  }
+  .navAndSignup {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: start;
+    gap: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100vh;
+    padding-top: 40px;
+    overflow: hidden;
+    background-color: #ffffff;
+  }
+  .navLinks {
+    flex-direction: column;
+    row-gap: 40px;
+  }
+  .navLinks a {
+    font-size: 1rem;
+  }
+  .loginSignUp a {
+    padding: 5px 20px;
+  }
+}
+@media only screen and (max-width: 520px) {
+  nav {
+    height: 70px;
+    padding: 0 30px;
+  }
+  nav .logo img {
+    width: 50px;
+    height: 50px;
+  }
+  nav .logo .name label {
+    font-size: 1rem;
+  }
+  .menuButton {
+    position: absolute;
+    right: 10px;
+  }
+}
+@media only screen and (max-width: 425px) {
+  nav {
+    height: 65px;
+  }
+  nav .logo img {
+    width: 45px;
+    height: 45px;
+  }
+  nav .logo .name label {
+    font-size: 0.8rem;
+  }
+  .menuButton {
+    position: absolute;
+  }
+}
+@media only screen and (max-width: 375px) {
+  nav {
+    height: 65px;
+  }
+  nav .logo img {
+    width: 45px;
+    height: 45px;
+  }
+  nav .logo .name label {
+    font-size: 0.7rem;
+  }
+}
+@media only screen and (max-width: 350px) {
+  nav .logo .name label {
+    font-size: 0.6rem;
+  }
+  .menuButton {
+    position: absolute;
+    right: 5px;
+  }
+}
+@media only screen and (max-width: 300px) {
+  nav .logo .name label {
+    display: none;
+  }
+}
